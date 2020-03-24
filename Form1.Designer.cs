@@ -37,12 +37,13 @@
 			this.rbCaesar = new System.Windows.Forms.RadioButton();
 			this.rbLitorea = new System.Windows.Forms.RadioButton();
 			this.gbSettings = new System.Windows.Forms.GroupBox();
+			this.tbXORKey = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.nudCaesarKey = new System.Windows.Forms.NumericUpDown();
 			this.btnSwap = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.tbXORKey = new System.Windows.Forms.TextBox();
 			this.btnCrear = new System.Windows.Forms.Button();
+			this.rbNumber = new System.Windows.Forms.RadioButton();
 			this.gbMethod.SuspendLayout();
 			this.gbSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).BeginInit();
@@ -86,6 +87,7 @@
 			// 
 			// gbMethod
 			// 
+			this.gbMethod.Controls.Add(this.rbNumber);
 			this.gbMethod.Controls.Add(this.rbXor);
 			this.gbMethod.Controls.Add(this.rbCaesar);
 			this.gbMethod.Controls.Add(this.rbLitorea);
@@ -139,10 +141,28 @@
 			this.gbSettings.Controls.Add(this.nudCaesarKey);
 			this.gbSettings.Location = new System.Drawing.Point(13, 385);
 			this.gbSettings.Name = "gbSettings";
-			this.gbSettings.Size = new System.Drawing.Size(753, 74);
+			this.gbSettings.Size = new System.Drawing.Size(597, 74);
 			this.gbSettings.TabIndex = 5;
 			this.gbSettings.TabStop = false;
 			this.gbSettings.Text = "Settings";
+			// 
+			// tbXORKey
+			// 
+			this.tbXORKey.Location = new System.Drawing.Point(75, 43);
+			this.tbXORKey.Name = "tbXORKey";
+			this.tbXORKey.Size = new System.Drawing.Size(120, 20);
+			this.tbXORKey.TabIndex = 4;
+			this.tbXORKey.Text = "123";
+			this.tbXORKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbXORKey_KeyPress);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(7, 45);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(50, 13);
+			this.label2.TabIndex = 3;
+			this.label2.Text = "XOR key";
 			// 
 			// label1
 			// 
@@ -186,24 +206,6 @@
 			this.btnSwap.UseVisualStyleBackColor = true;
 			this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
 			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(7, 45);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 13);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "XOR key";
-			// 
-			// tbXORKey
-			// 
-			this.tbXORKey.Location = new System.Drawing.Point(75, 43);
-			this.tbXORKey.Name = "tbXORKey";
-			this.tbXORKey.Size = new System.Drawing.Size(120, 20);
-			this.tbXORKey.TabIndex = 4;
-			this.tbXORKey.Text = "123";
-			this.tbXORKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbXORKey_KeyPress);
-			// 
 			// btnCrear
 			// 
 			this.btnCrear.Location = new System.Drawing.Point(396, 356);
@@ -213,6 +215,17 @@
 			this.btnCrear.Text = "Clear";
 			this.btnCrear.UseVisualStyleBackColor = true;
 			this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+			// 
+			// rbNumber
+			// 
+			this.rbNumber.AutoSize = true;
+			this.rbNumber.Location = new System.Drawing.Point(7, 89);
+			this.rbNumber.Name = "rbNumber";
+			this.rbNumber.Size = new System.Drawing.Size(67, 17);
+			this.rbNumber.TabIndex = 3;
+			this.rbNumber.Text = "Numbers";
+			this.rbNumber.UseVisualStyleBackColor = true;
+			this.rbNumber.CheckedChanged += new System.EventHandler(this.rbNumber_CheckedChanged);
 			// 
 			// MainForm
 			// 
@@ -227,6 +240,7 @@
 			this.Controls.Add(this.btnDecode);
 			this.Controls.Add(this.btnCode);
 			this.Controls.Add(this.rtbText);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "CryptosV";
@@ -256,6 +270,7 @@
 		private System.Windows.Forms.TextBox tbXORKey;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnCrear;
+		private System.Windows.Forms.RadioButton rbNumber;
 	}
 }
 

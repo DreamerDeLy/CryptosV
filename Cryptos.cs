@@ -16,21 +16,7 @@ namespace CryptosV
 			char[] ch_text = text.ToCharArray();
 			string result = "";
 
-			string s_alphabet = "";
-
-			//if (alphabet_en.Contains(char.ToUpper(ch_text[0])))
-			//{
-			//	s_alphabet = alphabet_en;
-			//}
-			//else
-			//{
-			//	s_alphabet = alphabet_ua;
-			//}
-
-			//char[] alphabet = s_alphabet.ToArray();
-			//int a_length = s_alphabet.Length;
-
-			
+			string s_alphabet = "";			
 
 			for (int i = 0; i < text.Length; i++)
 			{
@@ -55,9 +41,7 @@ namespace CryptosV
 
 				ch = char.ToUpper(ch);
 
-				bool skip = !alphabet.Contains(ch);
-
-				if (!skip)
+				if (alphabet.Contains(ch))
 				{
 					int ch_pos = Array.IndexOf(alphabet, ch);
 
@@ -129,6 +113,49 @@ namespace CryptosV
 		public static string DecryptLitorea(string text)
 		{
 			return EncryptLitorea(text);
+		}
+
+		public static string EncryptNumber(string text)
+		{
+			char[] ch_text = text.ToCharArray();
+			string result = "";
+
+			string s_alphabet = "";
+
+			for (int i = 0; i < text.Length; i++)
+			{
+				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
+				{
+					s_alphabet = alphabet_en;
+				}
+				else
+				{
+					s_alphabet = alphabet_ua;
+				}
+
+				char[] alphabet = s_alphabet.ToArray();
+
+				char ch = ch_text[i];
+				char ch_next = ' ';
+				if (i < (text.Length - 1)) ch_next = ch_text[i + 1];
+
+				string str_result =  "" + ch;
+
+				ch = char.ToUpper(ch);
+				ch_next = char.ToUpper(ch_next);
+
+				if (alphabet.Contains(ch))
+				{
+					int n = Array.IndexOf(alphabet, ch) + 1;
+					str_result = n.ToString();
+
+					if (alphabet.Contains(ch_next)) str_result += "-";
+				}
+
+				result += str_result;
+			}
+
+			return result;
 		}
 	}
 }

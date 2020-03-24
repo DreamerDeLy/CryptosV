@@ -38,6 +38,9 @@ namespace CryptosV
 					int key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.EncryptXOR(text, key);
 					break;
+				case 4:
+					result = Cryptos.EncryptNumber(text);
+					break;
 			}
 
 			rtbResult.Text = result; 
@@ -82,6 +85,10 @@ namespace CryptosV
 			selected_method = 3;
 		}
 
+		private void rbNumber_CheckedChanged(object sender, EventArgs e)
+		{
+			selected_method = 4;
+		}
 
 
 		private void nudCaesarKey_ValueChanged(object sender, EventArgs e)
