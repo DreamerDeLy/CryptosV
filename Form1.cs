@@ -41,6 +41,9 @@ namespace CryptosV
 				case 4:
 					result = Cryptos.EncryptNumber(text);
 					break;
+				default:
+					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					break;
 			}
 
 			rtbResult.Text = result; 
@@ -62,6 +65,9 @@ namespace CryptosV
 				case 3:
 					int key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.DecryptXOR(text, key);
+					break;
+				default:
+					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					break;
 			}
 
