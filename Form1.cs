@@ -82,21 +82,33 @@ namespace CryptosV
 		private void rbLitorea_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = 1;
+			//pnlColor.BackColor = Color.Red;
+			pnlColor.BackColor = Color.Yellow;
+			//pnlColor.BackColor = Color.Lime;
 		}
 
 		private void rbCaesar_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = 2;
+			//pnlColor.BackColor = Color.Red;
+			pnlColor.BackColor = Color.Yellow;
+			//pnlColor.BackColor = Color.Lime;
 		}
 
 		private void rbXor_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = 3;
+			//pnlColor.BackColor = Color.Red;
+			//pnlColor.BackColor = Color.Yellow;
+			pnlColor.BackColor = Color.Lime;
 		}
 
 		private void rbNumber_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = 4;
+			pnlColor.BackColor = Color.Red;
+			//pnlColor.BackColor = Color.Yellow;
+			//pnlColor.BackColor = Color.Lime;
 		}
 
 
@@ -104,7 +116,6 @@ namespace CryptosV
 		{
 			key_caesar = Convert.ToInt32(nudCaesarKey.Value);
 		}
-
 
 
 		private void btnSwap_Click(object sender, EventArgs e)

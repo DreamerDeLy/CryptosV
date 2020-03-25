@@ -44,6 +44,7 @@
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
 			this.rbNumber = new System.Windows.Forms.RadioButton();
+			this.pnlColor = new System.Windows.Forms.Panel();
 			this.gbMethod.SuspendLayout();
 			this.gbSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).BeginInit();
@@ -55,7 +56,7 @@
 			this.rtbText.Name = "rtbText";
 			this.rtbText.Size = new System.Drawing.Size(296, 337);
 			this.rtbText.TabIndex = 0;
-			this.rtbText.Text = "";
+			this.rtbText.Text = "Добрий ранок, Україно!";
 			// 
 			// btnCode
 			// 
@@ -87,6 +88,7 @@
 			// 
 			// gbMethod
 			// 
+			this.gbMethod.Controls.Add(this.pnlColor);
 			this.gbMethod.Controls.Add(this.rbNumber);
 			this.gbMethod.Controls.Add(this.rbXor);
 			this.gbMethod.Controls.Add(this.rbCaesar);
@@ -227,6 +229,15 @@
 			this.rbNumber.UseVisualStyleBackColor = true;
 			this.rbNumber.CheckedChanged += new System.EventHandler(this.rbNumber_CheckedChanged);
 			// 
+			// pnlColor
+			// 
+			this.pnlColor.BackColor = System.Drawing.Color.Yellow;
+			this.pnlColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlColor.Location = new System.Drawing.Point(7, 274);
+			this.pnlColor.Name = "pnlColor";
+			this.pnlColor.Size = new System.Drawing.Size(137, 56);
+			this.pnlColor.TabIndex = 4;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +282,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnCrear;
 		private System.Windows.Forms.RadioButton rbNumber;
+		private System.Windows.Forms.Panel pnlColor;
 	}
 }
 
