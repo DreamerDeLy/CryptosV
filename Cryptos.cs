@@ -77,8 +77,8 @@ namespace CryptosV
 
 		public static string EncryptLitorea(string text)
 		{
-			string alphabet1 = "АБВГДЕЄЖЗИІЇЙКЛМ";
-			string alphabet2 = "НОПРСТУФХЦЧШЩЬЮЯ";
+			string alphabet1 = "БВГДЖЗКЛМН";
+			string alphabet2 = "ЩШЧЦХФТСРП";
 
 			char[] ch_text = text.ToCharArray();
 			string result = "";
