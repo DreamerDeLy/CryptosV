@@ -157,5 +157,32 @@ namespace CryptosV
 
 			return result;
 		}
+
+		public static string DecryptNumber(string text)
+		{
+			string result = "";
+
+			string[] words = text.Split(' ');
+
+			foreach(string w in words)
+			{
+				string[] letters = w.Split('-');
+
+				foreach(string l in letters)
+				{
+					string str = l.Trim();
+					int n = Convert.ToInt32(str);
+
+					if ((n - 1) < alphabet_ua.Length)
+					{
+						result += alphabet_ua[(n-1)];
+					}
+				}
+
+				result += " ";
+			}
+
+			return result;
+		}
 	}
 }

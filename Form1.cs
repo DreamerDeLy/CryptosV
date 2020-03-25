@@ -66,6 +66,9 @@ namespace CryptosV
 					int key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.DecryptXOR(text, key);
 					break;
+				case 4:
+					result = Cryptos.DecryptNumber(text);
+					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					break;
