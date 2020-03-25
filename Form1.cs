@@ -36,11 +36,15 @@ namespace CryptosV
 					result = Cryptos.EncryptCaesar(text, key_caesar);
 					break;
 				case Cryptos.CiperType.XOR:
-					int key = Convert.ToInt32(tbXORKey.Text);
-					result = Cryptos.EncryptXOR(text, key);
+					int xor_key = Convert.ToInt32(tbXORKey.Text);
+					result = Cryptos.EncryptXOR(text, xor_key);
 					break;
 				case Cryptos.CiperType.Numbers:
 					result = Cryptos.EncryptNumber(text);
+					break;
+				case Cryptos.CiperType.Vigenere:
+					string v_key = tbVigenereKey.Text;
+					result = Cryptos.EncryptVigenere(text, v_key);
 					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -64,11 +68,15 @@ namespace CryptosV
 					result = Cryptos.DecryptCaesar(text, key_caesar);
 					break;
 				case Cryptos.CiperType.XOR:
-					int key = Convert.ToInt32(tbXORKey.Text);
-					result = Cryptos.DecryptXOR(text, key);
+					int xor_key = Convert.ToInt32(tbXORKey.Text);
+					result = Cryptos.DecryptXOR(text, xor_key);
 					break;
 				case Cryptos.CiperType.Numbers:
 					result = Cryptos.DecryptNumber(text);
+					break;
+				case Cryptos.CiperType.Vigenere:
+					string v_key = tbVigenereKey.Text;
+					result = Cryptos.DecryptVigenere(text, v_key);
 					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -102,6 +110,12 @@ namespace CryptosV
 		{
 			selected_method = Cryptos.CiperType.Numbers;
 			setSafety(1);
+		}
+
+		private void rbVigenere_CheckedChanged(object sender, EventArgs e)
+		{
+			selected_method = Cryptos.CiperType.Vigenere;
+			setSafety(3);
 		}
 
 
@@ -154,5 +168,7 @@ namespace CryptosV
 					break;
 			}
 		}
+
+		
 	}
 }

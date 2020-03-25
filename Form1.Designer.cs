@@ -35,6 +35,7 @@
 			this.rtbResult = new System.Windows.Forms.RichTextBox();
 			this.gbMethod = new System.Windows.Forms.GroupBox();
 			this.pnlColor = new System.Windows.Forms.Panel();
+			this.lblSafety = new System.Windows.Forms.Label();
 			this.rbNumber = new System.Windows.Forms.RadioButton();
 			this.rbXor = new System.Windows.Forms.RadioButton();
 			this.rbCaesar = new System.Windows.Forms.RadioButton();
@@ -46,7 +47,9 @@
 			this.nudCaesarKey = new System.Windows.Forms.NumericUpDown();
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
-			this.lblSafety = new System.Windows.Forms.Label();
+			this.rbVigenere = new System.Windows.Forms.RadioButton();
+			this.tbVigenereKey = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
@@ -91,6 +94,7 @@
 			// 
 			// gbMethod
 			// 
+			this.gbMethod.Controls.Add(this.rbVigenere);
 			this.gbMethod.Controls.Add(this.pnlColor);
 			this.gbMethod.Controls.Add(this.rbNumber);
 			this.gbMethod.Controls.Add(this.rbXor);
@@ -112,6 +116,16 @@
 			this.pnlColor.Name = "pnlColor";
 			this.pnlColor.Size = new System.Drawing.Size(137, 56);
 			this.pnlColor.TabIndex = 4;
+			// 
+			// lblSafety
+			// 
+			this.lblSafety.AutoSize = true;
+			this.lblSafety.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lblSafety.Location = new System.Drawing.Point(4, 19);
+			this.lblSafety.Name = "lblSafety";
+			this.lblSafety.Size = new System.Drawing.Size(57, 13);
+			this.lblSafety.TabIndex = 0;
+			this.lblSafety.Text = "lblSafety";
 			// 
 			// rbNumber
 			// 
@@ -161,20 +175,22 @@
 			// 
 			// gbSettings
 			// 
+			this.gbSettings.Controls.Add(this.tbVigenereKey);
+			this.gbSettings.Controls.Add(this.label3);
 			this.gbSettings.Controls.Add(this.tbXORKey);
 			this.gbSettings.Controls.Add(this.label2);
 			this.gbSettings.Controls.Add(this.label1);
 			this.gbSettings.Controls.Add(this.nudCaesarKey);
 			this.gbSettings.Location = new System.Drawing.Point(13, 385);
 			this.gbSettings.Name = "gbSettings";
-			this.gbSettings.Size = new System.Drawing.Size(597, 74);
+			this.gbSettings.Size = new System.Drawing.Size(597, 101);
 			this.gbSettings.TabIndex = 5;
 			this.gbSettings.TabStop = false;
 			this.gbSettings.Text = "Settings";
 			// 
 			// tbXORKey
 			// 
-			this.tbXORKey.Location = new System.Drawing.Point(75, 43);
+			this.tbXORKey.Location = new System.Drawing.Point(82, 43);
 			this.tbXORKey.Name = "tbXORKey";
 			this.tbXORKey.Size = new System.Drawing.Size(120, 20);
 			this.tbXORKey.TabIndex = 4;
@@ -201,7 +217,7 @@
 			// 
 			// nudCaesarKey
 			// 
-			this.nudCaesarKey.Location = new System.Drawing.Point(75, 16);
+			this.nudCaesarKey.Location = new System.Drawing.Point(82, 16);
 			this.nudCaesarKey.Maximum = new decimal(new int[] {
             50,
             0,
@@ -242,21 +258,39 @@
 			this.btnCrear.UseVisualStyleBackColor = true;
 			this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 			// 
-			// lblSafety
+			// rbVigenere
 			// 
-			this.lblSafety.AutoSize = true;
-			this.lblSafety.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lblSafety.Location = new System.Drawing.Point(4, 19);
-			this.lblSafety.Name = "lblSafety";
-			this.lblSafety.Size = new System.Drawing.Size(57, 13);
-			this.lblSafety.TabIndex = 0;
-			this.lblSafety.Text = "lblSafety";
+			this.rbVigenere.AutoSize = true;
+			this.rbVigenere.Location = new System.Drawing.Point(7, 112);
+			this.rbVigenere.Name = "rbVigenere";
+			this.rbVigenere.Size = new System.Drawing.Size(67, 17);
+			this.rbVigenere.TabIndex = 5;
+			this.rbVigenere.Text = "Vigenere";
+			this.rbVigenere.UseVisualStyleBackColor = true;
+			this.rbVigenere.CheckedChanged += new System.EventHandler(this.rbVigenere_CheckedChanged);
+			// 
+			// tbVigenereKey
+			// 
+			this.tbVigenereKey.Location = new System.Drawing.Point(82, 69);
+			this.tbVigenereKey.Name = "tbVigenereKey";
+			this.tbVigenereKey.Size = new System.Drawing.Size(120, 20);
+			this.tbVigenereKey.TabIndex = 6;
+			this.tbVigenereKey.Text = "ключ";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(7, 71);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(69, 13);
+			this.label3.TabIndex = 5;
+			this.label3.Text = "Vigenere key";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(776, 471);
+			this.ClientSize = new System.Drawing.Size(776, 493);
 			this.Controls.Add(this.btnCrear);
 			this.Controls.Add(this.btnSwap);
 			this.Controls.Add(this.gbSettings);
@@ -301,6 +335,9 @@
 		private System.Windows.Forms.RadioButton rbNumber;
 		private System.Windows.Forms.Panel pnlColor;
 		private System.Windows.Forms.Label lblSafety;
+		private System.Windows.Forms.RadioButton rbVigenere;
+		private System.Windows.Forms.TextBox tbVigenereKey;
+		private System.Windows.Forms.Label label3;
 	}
 }
 

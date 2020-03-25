@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CryptosV
 {
@@ -16,18 +17,19 @@ namespace CryptosV
 			Caesar,
 			XOR,
 			LitoreaClassic,
-			Numbers
+			Numbers,
+			Vigenere
 		}
 
 		public static string EncryptCaesar(string text, int shift = 3)
 		{
 			char[] ch_text = text.ToCharArray();
-			string result = "";
-
-			string s_alphabet = "";			
+			string result = "";	
 
 			for (int i = 0; i < text.Length; i++)
 			{
+				string s_alphabet = "";
+
 				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
 				{
 					s_alphabet = alphabet_en;
@@ -128,10 +130,10 @@ namespace CryptosV
 			char[] ch_text = text.ToCharArray();
 			string result = "";
 
-			string s_alphabet = "";
-
 			for (int i = 0; i < text.Length; i++)
 			{
+				string s_alphabet = "";
+
 				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
 				{
 					s_alphabet = alphabet_en;
@@ -191,6 +193,90 @@ namespace CryptosV
 			}
 
 			return result;
+		}
+
+		
+		private static string GetRepeatKey(string s, int n)
+		{
+			var p = s;
+			while (p.Length < n)
+			{
+				p += p;
+			}
+
+			return p.Substring(0, n);
+		}
+
+		public static string EncryptVigenere(string text, string key, bool key_minus = false)
+		{
+			string result = "";
+
+			char[] ch_text = text.ToCharArray();
+			string gamma = GetRepeatKey(key, text.Length);
+
+			int i_k = 0; // key pos
+
+			for (int i = 0; i < text.Length; i++)
+			{
+				string s_alphabet = "";
+
+				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
+				{
+					s_alphabet = alphabet_en;
+				}
+				else
+				{
+					s_alphabet = alphabet_ua;
+				}
+
+				char[] alphabet = s_alphabet.ToArray();
+				int a_length = s_alphabet.Length;
+
+				char ch = ch_text[i];
+				char ch_result = ch;
+
+				bool current_case = char.IsUpper(ch);
+
+				ch = char.ToUpper(ch);
+
+
+				if (alphabet_en.Contains(char.ToUpper(gamma[i_k])))
+				{
+					s_alphabet = alphabet_en;
+				}
+				else
+				{
+					s_alphabet = alphabet_ua;
+				}
+
+				char[] key_alphabet = s_alphabet.ToArray();
+
+				char k = gamma[i_k];
+				k = char.ToUpper(k);
+
+				if (alphabet.Contains(ch))
+				{
+					int ch_pos = Array.IndexOf(alphabet, ch);
+					int key_pos = Array.IndexOf(key_alphabet, k);
+
+					if (key_minus) key_pos = 0 - key_pos; // For decode
+
+					int n = (a_length + ch_pos + key_pos) % a_length;
+					ch_result = alphabet[n];
+
+					if (!current_case) ch_result = char.ToLower(ch_result);
+					i_k++;
+				}
+
+				result += ch_result;
+			}
+
+			return result;
+		}
+
+		public static string DecryptVigenere(string text, string key)
+		{
+			return EncryptVigenere(text, key, true);
 		}
 	}
 }
