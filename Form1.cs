@@ -19,6 +19,8 @@ namespace CryptosV
 		public MainForm()
 		{
 			InitializeComponent();
+
+			setSafety(2);
 		}
 
 		private void btnCode_Click(object sender, EventArgs e)
@@ -81,34 +83,26 @@ namespace CryptosV
 
 		private void rbLitorea_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = 1;
-			//pnlColor.BackColor = Color.Red;
-			pnlColor.BackColor = Color.Yellow;
-			//pnlColor.BackColor = Color.Lime;
+			selected_method = Cryptos.CiperType.LitoreaClassic;
+			setSafety(2);
 		}
 
 		private void rbCaesar_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = 2;
-			//pnlColor.BackColor = Color.Red;
-			pnlColor.BackColor = Color.Yellow;
-			//pnlColor.BackColor = Color.Lime;
+			selected_method = Cryptos.CiperType.Caesar;
+			setSafety(2);
 		}
 
 		private void rbXor_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = 3;
-			//pnlColor.BackColor = Color.Red;
-			//pnlColor.BackColor = Color.Yellow;
-			pnlColor.BackColor = Color.Lime;
+			selected_method = Cryptos.CiperType.XOR;
+			setSafety(3);
 		}
 
 		private void rbNumber_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = 4;
-			pnlColor.BackColor = Color.Red;
-			//pnlColor.BackColor = Color.Yellow;
-			//pnlColor.BackColor = Color.Lime;
+			selected_method = Cryptos.CiperType.Numbers;
+			setSafety(1);
 		}
 
 
@@ -143,6 +137,23 @@ namespace CryptosV
 			}
 		}
 
-		
+		void setSafety(int level = 1)
+		{
+			switch (level)
+			{
+				case 1:
+					pnlColor.BackColor = Color.Red;
+					lblSafety.Text = "Safety: low";
+					break;
+				case 2:
+					pnlColor.BackColor = Color.Yellow;
+					lblSafety.Text = "Safety: medium";
+					break;
+				case 3:
+					pnlColor.BackColor = Color.Lime;
+					lblSafety.Text = "Safety: high";
+					break;
+			}
+		}
 	}
 }

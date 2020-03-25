@@ -28,11 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.rtbText = new System.Windows.Forms.RichTextBox();
 			this.btnCode = new System.Windows.Forms.Button();
 			this.btnDecode = new System.Windows.Forms.Button();
 			this.rtbResult = new System.Windows.Forms.RichTextBox();
 			this.gbMethod = new System.Windows.Forms.GroupBox();
+			this.pnlColor = new System.Windows.Forms.Panel();
+			this.rbNumber = new System.Windows.Forms.RadioButton();
 			this.rbXor = new System.Windows.Forms.RadioButton();
 			this.rbCaesar = new System.Windows.Forms.RadioButton();
 			this.rbLitorea = new System.Windows.Forms.RadioButton();
@@ -43,9 +46,9 @@
 			this.nudCaesarKey = new System.Windows.Forms.NumericUpDown();
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
-			this.rbNumber = new System.Windows.Forms.RadioButton();
-			this.pnlColor = new System.Windows.Forms.Panel();
+			this.lblSafety = new System.Windows.Forms.Label();
 			this.gbMethod.SuspendLayout();
+			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).BeginInit();
 			this.SuspendLayout();
@@ -100,10 +103,31 @@
 			this.gbMethod.TabStop = false;
 			this.gbMethod.Text = "Method";
 			// 
+			// pnlColor
+			// 
+			this.pnlColor.BackColor = System.Drawing.Color.Yellow;
+			this.pnlColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlColor.Controls.Add(this.lblSafety);
+			this.pnlColor.Location = new System.Drawing.Point(7, 274);
+			this.pnlColor.Name = "pnlColor";
+			this.pnlColor.Size = new System.Drawing.Size(137, 56);
+			this.pnlColor.TabIndex = 4;
+			// 
+			// rbNumber
+			// 
+			this.rbNumber.AutoSize = true;
+			this.rbNumber.Location = new System.Drawing.Point(7, 19);
+			this.rbNumber.Name = "rbNumber";
+			this.rbNumber.Size = new System.Drawing.Size(57, 17);
+			this.rbNumber.TabIndex = 3;
+			this.rbNumber.Text = "A1Z26";
+			this.rbNumber.UseVisualStyleBackColor = true;
+			this.rbNumber.CheckedChanged += new System.EventHandler(this.rbNumber_CheckedChanged);
+			// 
 			// rbXor
 			// 
 			this.rbXor.AutoSize = true;
-			this.rbXor.Location = new System.Drawing.Point(7, 66);
+			this.rbXor.Location = new System.Drawing.Point(7, 89);
 			this.rbXor.Name = "rbXor";
 			this.rbXor.Size = new System.Drawing.Size(48, 17);
 			this.rbXor.TabIndex = 2;
@@ -115,7 +139,7 @@
 			// 
 			this.rbCaesar.AutoSize = true;
 			this.rbCaesar.Checked = true;
-			this.rbCaesar.Location = new System.Drawing.Point(7, 43);
+			this.rbCaesar.Location = new System.Drawing.Point(6, 65);
 			this.rbCaesar.Name = "rbCaesar";
 			this.rbCaesar.Size = new System.Drawing.Size(58, 17);
 			this.rbCaesar.TabIndex = 1;
@@ -127,7 +151,7 @@
 			// rbLitorea
 			// 
 			this.rbLitorea.AutoSize = true;
-			this.rbLitorea.Location = new System.Drawing.Point(7, 20);
+			this.rbLitorea.Location = new System.Drawing.Point(7, 42);
 			this.rbLitorea.Name = "rbLitorea";
 			this.rbLitorea.Size = new System.Drawing.Size(57, 17);
 			this.rbLitorea.TabIndex = 0;
@@ -218,25 +242,15 @@
 			this.btnCrear.UseVisualStyleBackColor = true;
 			this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 			// 
-			// rbNumber
+			// lblSafety
 			// 
-			this.rbNumber.AutoSize = true;
-			this.rbNumber.Location = new System.Drawing.Point(7, 89);
-			this.rbNumber.Name = "rbNumber";
-			this.rbNumber.Size = new System.Drawing.Size(67, 17);
-			this.rbNumber.TabIndex = 3;
-			this.rbNumber.Text = "Numbers";
-			this.rbNumber.UseVisualStyleBackColor = true;
-			this.rbNumber.CheckedChanged += new System.EventHandler(this.rbNumber_CheckedChanged);
-			// 
-			// pnlColor
-			// 
-			this.pnlColor.BackColor = System.Drawing.Color.Yellow;
-			this.pnlColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pnlColor.Location = new System.Drawing.Point(7, 274);
-			this.pnlColor.Name = "pnlColor";
-			this.pnlColor.Size = new System.Drawing.Size(137, 56);
-			this.pnlColor.TabIndex = 4;
+			this.lblSafety.AutoSize = true;
+			this.lblSafety.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lblSafety.Location = new System.Drawing.Point(4, 19);
+			this.lblSafety.Name = "lblSafety";
+			this.lblSafety.Size = new System.Drawing.Size(57, 13);
+			this.lblSafety.TabIndex = 0;
+			this.lblSafety.Text = "lblSafety";
 			// 
 			// MainForm
 			// 
@@ -252,11 +266,14 @@
 			this.Controls.Add(this.btnCode);
 			this.Controls.Add(this.rtbText);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "CryptosV";
 			this.gbMethod.ResumeLayout(false);
 			this.gbMethod.PerformLayout();
+			this.pnlColor.ResumeLayout(false);
+			this.pnlColor.PerformLayout();
 			this.gbSettings.ResumeLayout(false);
 			this.gbSettings.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).EndInit();
@@ -283,6 +300,7 @@
 		private System.Windows.Forms.Button btnCrear;
 		private System.Windows.Forms.RadioButton rbNumber;
 		private System.Windows.Forms.Panel pnlColor;
+		private System.Windows.Forms.Label lblSafety;
 	}
 }
 
