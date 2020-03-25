@@ -12,9 +12,8 @@ namespace CryptosV
 {
 	public partial class MainForm : Form
 	{
-
-		int selected_method = 2;
 		int key_caesar = 3;
+		Cryptos.CiperType selected_method = Cryptos.CiperType.Caesar;
 
 		public MainForm()
 		{
@@ -30,17 +29,17 @@ namespace CryptosV
 
 			switch (selected_method)
 			{
-				case 1:
+				case Cryptos.CiperType.LitoreaClassic:
 					result = Cryptos.EncryptLitorea(text); 
 					break;
-				case 2:
+				case Cryptos.CiperType.Caesar:
 					result = Cryptos.EncryptCaesar(text, key_caesar);
 					break;
-				case 3:
+				case Cryptos.CiperType.XOR:
 					int key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.EncryptXOR(text, key);
 					break;
-				case 4:
+				case Cryptos.CiperType.Numbers:
 					result = Cryptos.EncryptNumber(text);
 					break;
 				default:
@@ -58,17 +57,17 @@ namespace CryptosV
 
 			switch (selected_method)
 			{
-				case 1:
+				case Cryptos.CiperType.LitoreaClassic:
 					result = Cryptos.DecryptLitorea(text); 
 					break;
-				case 2:
+				case Cryptos.CiperType.Caesar:
 					result = Cryptos.DecryptCaesar(text, key_caesar);
 					break;
-				case 3:
+				case Cryptos.CiperType.XOR:
 					int key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.DecryptXOR(text, key);
 					break;
-				case 4:
+				case Cryptos.CiperType.Numbers:
 					result = Cryptos.DecryptNumber(text);
 					break;
 				default:

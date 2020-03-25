@@ -11,6 +11,14 @@ namespace CryptosV
 		static string alphabet_en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		static string alphabet_ua = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
 
+		public enum CiperType
+		{
+			Caesar,
+			XOR,
+			LitoreaClassic,
+			Numbers
+		}
+
 		public static string EncryptCaesar(string text, int shift = 3)
 		{
 			char[] ch_text = text.ToCharArray();
