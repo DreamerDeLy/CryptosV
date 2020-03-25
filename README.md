@@ -14,10 +14,12 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Caesar (UKR/EN, switch on go)
 - XOR (any language)
 - A1Z26 (UKR/EN, switch on go)
+- Vigener (UKR/EN, switch on go)
 
 **ToDo's**
 - Custom alphabets
 - New cipers
+- Load/save text to file
 
 
 Copyright (c) 2020 Obukhov Dmytro (DreamerDeLy)
