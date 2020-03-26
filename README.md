@@ -8,6 +8,8 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Support for two languages and switching alphabets on the go (not all cipers).
 - Saves all characters
 - Saves letter case
+- Custom alphabets
+- Load/save text to file
 
 **Supported cipers:**
 - Litorea (UKR)
@@ -17,9 +19,8 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Vigener (UKR/EN, switch on go)
 
 **ToDo's**
-- Custom alphabets
 - New cipers
-- Load/save text to file
+- Save settings to file
 
 
 Copyright (c) 2020 Obukhov Dmytro (DreamerDeLy)
