@@ -34,6 +34,7 @@
 			this.btnDecode = new System.Windows.Forms.Button();
 			this.rtbResult = new System.Windows.Forms.RichTextBox();
 			this.gbMethod = new System.Windows.Forms.GroupBox();
+			this.rbVigenere = new System.Windows.Forms.RadioButton();
 			this.pnlColor = new System.Windows.Forms.Panel();
 			this.lblSafety = new System.Windows.Forms.Label();
 			this.rbNumber = new System.Windows.Forms.RadioButton();
@@ -41,25 +42,31 @@
 			this.rbCaesar = new System.Windows.Forms.RadioButton();
 			this.rbLitorea = new System.Windows.Forms.RadioButton();
 			this.gbSettings = new System.Windows.Forms.GroupBox();
+			this.tbVigenereKey = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.tbXORKey = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.nudCaesarKey = new System.Windows.Forms.NumericUpDown();
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
-			this.rbVigenere = new System.Windows.Forms.RadioButton();
-			this.tbVigenereKey = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.tbAlphabet1 = new System.Windows.Forms.TextBox();
+			this.tbAlphabet2 = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.btnAlphabetsSet = new System.Windows.Forms.Button();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// rtbText
 			// 
 			this.rtbText.Location = new System.Drawing.Point(12, 12);
 			this.rtbText.Name = "rtbText";
+			this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
 			this.rtbText.Size = new System.Drawing.Size(296, 337);
 			this.rtbText.TabIndex = 0;
 			this.rtbText.Text = "Добрий ранок, Україно!";
@@ -88,6 +95,7 @@
 			// 
 			this.rtbResult.Location = new System.Drawing.Point(314, 12);
 			this.rtbResult.Name = "rtbResult";
+			this.rtbResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
 			this.rtbResult.Size = new System.Drawing.Size(296, 337);
 			this.rtbResult.TabIndex = 3;
 			this.rtbResult.Text = "";
@@ -106,6 +114,17 @@
 			this.gbMethod.TabIndex = 4;
 			this.gbMethod.TabStop = false;
 			this.gbMethod.Text = "Method";
+			// 
+			// rbVigenere
+			// 
+			this.rbVigenere.AutoSize = true;
+			this.rbVigenere.Location = new System.Drawing.Point(7, 112);
+			this.rbVigenere.Name = "rbVigenere";
+			this.rbVigenere.Size = new System.Drawing.Size(67, 17);
+			this.rbVigenere.TabIndex = 5;
+			this.rbVigenere.Text = "Vigenere";
+			this.rbVigenere.UseVisualStyleBackColor = true;
+			this.rbVigenere.CheckedChanged += new System.EventHandler(this.rbVigenere_CheckedChanged);
 			// 
 			// pnlColor
 			// 
@@ -183,16 +202,33 @@
 			this.gbSettings.Controls.Add(this.nudCaesarKey);
 			this.gbSettings.Location = new System.Drawing.Point(13, 385);
 			this.gbSettings.Name = "gbSettings";
-			this.gbSettings.Size = new System.Drawing.Size(597, 101);
+			this.gbSettings.Size = new System.Drawing.Size(295, 101);
 			this.gbSettings.TabIndex = 5;
 			this.gbSettings.TabStop = false;
-			this.gbSettings.Text = "Settings";
+			this.gbSettings.Text = "Methods settings";
+			// 
+			// tbVigenereKey
+			// 
+			this.tbVigenereKey.Location = new System.Drawing.Point(82, 69);
+			this.tbVigenereKey.Name = "tbVigenereKey";
+			this.tbVigenereKey.Size = new System.Drawing.Size(207, 20);
+			this.tbVigenereKey.TabIndex = 6;
+			this.tbVigenereKey.Text = "key";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(7, 71);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(69, 13);
+			this.label3.TabIndex = 5;
+			this.label3.Text = "Vigenere key";
 			// 
 			// tbXORKey
 			// 
 			this.tbXORKey.Location = new System.Drawing.Point(82, 43);
 			this.tbXORKey.Name = "tbXORKey";
-			this.tbXORKey.Size = new System.Drawing.Size(120, 20);
+			this.tbXORKey.Size = new System.Drawing.Size(207, 20);
 			this.tbXORKey.TabIndex = 4;
 			this.tbXORKey.Text = "123";
 			this.tbXORKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbXORKey_KeyPress);
@@ -229,7 +265,7 @@
             0,
             -2147483648});
 			this.nudCaesarKey.Name = "nudCaesarKey";
-			this.nudCaesarKey.Size = new System.Drawing.Size(120, 20);
+			this.nudCaesarKey.Size = new System.Drawing.Size(207, 20);
 			this.nudCaesarKey.TabIndex = 0;
 			this.nudCaesarKey.Value = new decimal(new int[] {
             3,
@@ -258,39 +294,60 @@
 			this.btnCrear.UseVisualStyleBackColor = true;
 			this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 			// 
-			// rbVigenere
+			// groupBox1
 			// 
-			this.rbVigenere.AutoSize = true;
-			this.rbVigenere.Location = new System.Drawing.Point(7, 112);
-			this.rbVigenere.Name = "rbVigenere";
-			this.rbVigenere.Size = new System.Drawing.Size(67, 17);
-			this.rbVigenere.TabIndex = 5;
-			this.rbVigenere.Text = "Vigenere";
-			this.rbVigenere.UseVisualStyleBackColor = true;
-			this.rbVigenere.CheckedChanged += new System.EventHandler(this.rbVigenere_CheckedChanged);
+			this.groupBox1.Controls.Add(this.btnAlphabetsSet);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.tbAlphabet2);
+			this.groupBox1.Controls.Add(this.tbAlphabet1);
+			this.groupBox1.Location = new System.Drawing.Point(315, 386);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(295, 100);
+			this.groupBox1.TabIndex = 8;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Global settings";
 			// 
-			// tbVigenereKey
+			// tbAlphabet1
 			// 
-			this.tbVigenereKey.Location = new System.Drawing.Point(82, 69);
-			this.tbVigenereKey.Name = "tbVigenereKey";
-			this.tbVigenereKey.Size = new System.Drawing.Size(120, 20);
-			this.tbVigenereKey.TabIndex = 6;
-			this.tbVigenereKey.Text = "ключ";
+			this.tbAlphabet1.Location = new System.Drawing.Point(10, 41);
+			this.tbAlphabet1.Name = "tbAlphabet1";
+			this.tbAlphabet1.Size = new System.Drawing.Size(226, 20);
+			this.tbAlphabet1.TabIndex = 0;
+			this.tbAlphabet1.Text = "adc";
 			// 
-			// label3
+			// tbAlphabet2
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(7, 71);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(69, 13);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Vigenere key";
+			this.tbAlphabet2.Location = new System.Drawing.Point(10, 68);
+			this.tbAlphabet2.Name = "tbAlphabet2";
+			this.tbAlphabet2.Size = new System.Drawing.Size(226, 20);
+			this.tbAlphabet2.TabIndex = 1;
+			this.tbAlphabet2.Text = "абв";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(7, 20);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(54, 13);
+			this.label4.TabIndex = 2;
+			this.label4.Text = "Alphabets";
+			// 
+			// btnAlphabetsSet
+			// 
+			this.btnAlphabetsSet.Location = new System.Drawing.Point(242, 41);
+			this.btnAlphabetsSet.Name = "btnAlphabetsSet";
+			this.btnAlphabetsSet.Size = new System.Drawing.Size(47, 47);
+			this.btnAlphabetsSet.TabIndex = 3;
+			this.btnAlphabetsSet.Text = "SET";
+			this.btnAlphabetsSet.UseVisualStyleBackColor = true;
+			this.btnAlphabetsSet.Click += new System.EventHandler(this.btnAlphabetsSet_Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(776, 493);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnCrear);
 			this.Controls.Add(this.btnSwap);
 			this.Controls.Add(this.gbSettings);
@@ -311,6 +368,8 @@
 			this.gbSettings.ResumeLayout(false);
 			this.gbSettings.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -338,6 +397,11 @@
 		private System.Windows.Forms.RadioButton rbVigenere;
 		private System.Windows.Forms.TextBox tbVigenereKey;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox tbAlphabet2;
+		private System.Windows.Forms.TextBox tbAlphabet1;
+		private System.Windows.Forms.Button btnAlphabetsSet;
 	}
 }
 

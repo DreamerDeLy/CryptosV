@@ -20,6 +20,8 @@ namespace CryptosV
 			InitializeComponent();
 
 			setSafety(2);
+			tbAlphabet1.Text = Cryptos.alphabet_en;
+			tbAlphabet2.Text = Cryptos.alphabet_ua;
 		}
 
 		private void btnCode_Click(object sender, EventArgs e)
@@ -169,6 +171,10 @@ namespace CryptosV
 			}
 		}
 
-		
+		private void btnAlphabetsSet_Click(object sender, EventArgs e)
+		{
+			Cryptos.alphabet_en = tbAlphabet1.Text.ToUpper();
+			Cryptos.alphabet_ua = tbAlphabet2.Text.ToUpper();
+		}
 	}
 }

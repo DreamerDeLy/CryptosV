@@ -9,8 +9,8 @@ namespace CryptosV
 {
 	static class Cryptos
 	{
-		static string alphabet_en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		static string alphabet_ua = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
+		public static string alphabet_en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		public static string alphabet_ua = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
 
 		public enum CiperType
 		{
