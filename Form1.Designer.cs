@@ -51,23 +51,36 @@
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.tbAlphabet1 = new System.Windows.Forms.TextBox();
-			this.tbAlphabet2 = new System.Windows.Forms.TextBox();
-			this.label4 = new System.Windows.Forms.Label();
 			this.btnAlphabetsSet = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
+			this.tbAlphabet2 = new System.Windows.Forms.TextBox();
+			this.tbAlphabet1 = new System.Windows.Forms.TextBox();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiReadFromFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiSaveToFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutCipersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutAuthorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// rtbText
 			// 
-			this.rtbText.Location = new System.Drawing.Point(12, 12);
+			this.rtbText.Location = new System.Drawing.Point(12, 47);
 			this.rtbText.Name = "rtbText";
 			this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.rtbText.Size = new System.Drawing.Size(296, 337);
+			this.rtbText.Size = new System.Drawing.Size(296, 302);
 			this.rtbText.TabIndex = 0;
 			this.rtbText.Text = "Добрий ранок, Україно!";
 			// 
@@ -93,10 +106,10 @@
 			// 
 			// rtbResult
 			// 
-			this.rtbResult.Location = new System.Drawing.Point(314, 12);
+			this.rtbResult.Location = new System.Drawing.Point(314, 47);
 			this.rtbResult.Name = "rtbResult";
 			this.rtbResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.rtbResult.Size = new System.Drawing.Size(296, 337);
+			this.rtbResult.Size = new System.Drawing.Size(296, 302);
 			this.rtbResult.TabIndex = 3;
 			this.rtbResult.Text = "";
 			// 
@@ -108,9 +121,9 @@
 			this.gbMethod.Controls.Add(this.rbXor);
 			this.gbMethod.Controls.Add(this.rbCaesar);
 			this.gbMethod.Controls.Add(this.rbLitorea);
-			this.gbMethod.Location = new System.Drawing.Point(616, 13);
+			this.gbMethod.Location = new System.Drawing.Point(616, 28);
 			this.gbMethod.Name = "gbMethod";
-			this.gbMethod.Size = new System.Drawing.Size(150, 336);
+			this.gbMethod.Size = new System.Drawing.Size(150, 321);
 			this.gbMethod.TabIndex = 4;
 			this.gbMethod.TabStop = false;
 			this.gbMethod.Text = "Method";
@@ -131,7 +144,7 @@
 			this.pnlColor.BackColor = System.Drawing.Color.Yellow;
 			this.pnlColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pnlColor.Controls.Add(this.lblSafety);
-			this.pnlColor.Location = new System.Drawing.Point(7, 274);
+			this.pnlColor.Location = new System.Drawing.Point(7, 259);
 			this.pnlColor.Name = "pnlColor";
 			this.pnlColor.Size = new System.Drawing.Size(137, 56);
 			this.pnlColor.TabIndex = 4;
@@ -307,21 +320,15 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Global settings";
 			// 
-			// tbAlphabet1
+			// btnAlphabetsSet
 			// 
-			this.tbAlphabet1.Location = new System.Drawing.Point(10, 41);
-			this.tbAlphabet1.Name = "tbAlphabet1";
-			this.tbAlphabet1.Size = new System.Drawing.Size(226, 20);
-			this.tbAlphabet1.TabIndex = 0;
-			this.tbAlphabet1.Text = "adc";
-			// 
-			// tbAlphabet2
-			// 
-			this.tbAlphabet2.Location = new System.Drawing.Point(10, 68);
-			this.tbAlphabet2.Name = "tbAlphabet2";
-			this.tbAlphabet2.Size = new System.Drawing.Size(226, 20);
-			this.tbAlphabet2.TabIndex = 1;
-			this.tbAlphabet2.Text = "абв";
+			this.btnAlphabetsSet.Location = new System.Drawing.Point(240, 39);
+			this.btnAlphabetsSet.Name = "btnAlphabetsSet";
+			this.btnAlphabetsSet.Size = new System.Drawing.Size(49, 49);
+			this.btnAlphabetsSet.TabIndex = 3;
+			this.btnAlphabetsSet.Text = "SET";
+			this.btnAlphabetsSet.UseVisualStyleBackColor = true;
+			this.btnAlphabetsSet.Click += new System.EventHandler(this.btnAlphabetsSet_Click);
 			// 
 			// label4
 			// 
@@ -332,21 +339,120 @@
 			this.label4.TabIndex = 2;
 			this.label4.Text = "Alphabets";
 			// 
-			// btnAlphabetsSet
+			// tbAlphabet2
 			// 
-			this.btnAlphabetsSet.Location = new System.Drawing.Point(242, 41);
-			this.btnAlphabetsSet.Name = "btnAlphabetsSet";
-			this.btnAlphabetsSet.Size = new System.Drawing.Size(47, 47);
-			this.btnAlphabetsSet.TabIndex = 3;
-			this.btnAlphabetsSet.Text = "SET";
-			this.btnAlphabetsSet.UseVisualStyleBackColor = true;
-			this.btnAlphabetsSet.Click += new System.EventHandler(this.btnAlphabetsSet_Click);
+			this.tbAlphabet2.Location = new System.Drawing.Point(10, 68);
+			this.tbAlphabet2.Name = "tbAlphabet2";
+			this.tbAlphabet2.Size = new System.Drawing.Size(224, 20);
+			this.tbAlphabet2.TabIndex = 1;
+			this.tbAlphabet2.Text = "абв";
+			// 
+			// tbAlphabet1
+			// 
+			this.tbAlphabet1.Location = new System.Drawing.Point(10, 41);
+			this.tbAlphabet1.Name = "tbAlphabet1";
+			this.tbAlphabet1.Size = new System.Drawing.Size(224, 20);
+			this.tbAlphabet1.TabIndex = 0;
+			this.tbAlphabet1.Text = "adc";
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile,
+            this.tsmiHelp});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(776, 24);
+			this.menuStrip1.TabIndex = 9;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// tsmiFile
+			// 
+			this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiReadFromFile,
+            this.tsmiSaveToFile});
+			this.tsmiFile.Name = "tsmiFile";
+			this.tsmiFile.Size = new System.Drawing.Size(37, 20);
+			this.tsmiFile.Text = "File";
+			// 
+			// tsmiReadFromFile
+			// 
+			this.tsmiReadFromFile.Name = "tsmiReadFromFile";
+			this.tsmiReadFromFile.Size = new System.Drawing.Size(180, 22);
+			this.tsmiReadFromFile.Text = "Read text from file";
+			this.tsmiReadFromFile.Click += new System.EventHandler(this.tsmiReadFromFile_Click);
+			// 
+			// tsmiSaveToFile
+			// 
+			this.tsmiSaveToFile.Name = "tsmiSaveToFile";
+			this.tsmiSaveToFile.Size = new System.Drawing.Size(180, 22);
+			this.tsmiSaveToFile.Text = "Save ciper to file";
+			this.tsmiSaveToFile.Click += new System.EventHandler(this.tsmiSaveToFile_Click);
+			// 
+			// tsmiHelp
+			// 
+			this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutCipersToolStripMenuItem,
+            this.aboutProgramToolStripMenuItem,
+            this.aboutAuthorsToolStripMenuItem});
+			this.tsmiHelp.Name = "tsmiHelp";
+			this.tsmiHelp.Size = new System.Drawing.Size(44, 20);
+			this.tsmiHelp.Text = "Help";
+			// 
+			// aboutCipersToolStripMenuItem
+			// 
+			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
+			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutCipersToolStripMenuItem.Text = "About cipers";
+			// 
+			// aboutProgramToolStripMenuItem
+			// 
+			this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
+			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutProgramToolStripMenuItem.Text = "About program";
+			// 
+			// aboutAuthorsToolStripMenuItem
+			// 
+			this.aboutAuthorsToolStripMenuItem.Name = "aboutAuthorsToolStripMenuItem";
+			this.aboutAuthorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutAuthorsToolStripMenuItem.Text = "About authors";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(9, 28);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(28, 13);
+			this.label5.TabIndex = 10;
+			this.label5.Text = "Text";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(312, 28);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(31, 13);
+			this.label6.TabIndex = 11;
+			this.label6.Text = "Ciper";
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.Filter = "Text|*.txt|All files|*.*";
+			this.openFileDialog1.Title = "Open text from file";
+			// 
+			// saveFileDialog1
+			// 
+			this.saveFileDialog1.Filter = "Text|*.txt";
+			this.saveFileDialog1.Title = "Save ciper to file";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(776, 493);
+			this.Controls.Add(this.label6);
+			this.Controls.Add(this.label5);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnCrear);
 			this.Controls.Add(this.btnSwap);
@@ -356,8 +462,10 @@
 			this.Controls.Add(this.btnDecode);
 			this.Controls.Add(this.btnCode);
 			this.Controls.Add(this.rtbText);
+			this.Controls.Add(this.menuStrip1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "CryptosV";
@@ -370,7 +478,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.nudCaesarKey)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -402,6 +513,18 @@
 		private System.Windows.Forms.TextBox tbAlphabet2;
 		private System.Windows.Forms.TextBox tbAlphabet1;
 		private System.Windows.Forms.Button btnAlphabetsSet;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem tsmiFile;
+		private System.Windows.Forms.ToolStripMenuItem tsmiReadFromFile;
+		private System.Windows.Forms.ToolStripMenuItem tsmiSaveToFile;
+		private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
+		private System.Windows.Forms.ToolStripMenuItem aboutCipersToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutAuthorsToolStripMenuItem;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 	}
 }
 

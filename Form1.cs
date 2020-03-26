@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; // Forms
+using System.IO;            // File
+using System.Text.RegularExpressions; // Regex
 
 namespace CryptosV
 {
@@ -175,6 +177,49 @@ namespace CryptosV
 		{
 			Cryptos.alphabet_en = tbAlphabet1.Text.ToUpper();
 			Cryptos.alphabet_ua = tbAlphabet2.Text.ToUpper();
+		}
+
+		private void tsmiReadFromFile_Click(object sender, EventArgs e)
+		{
+			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					string new_text = File.ReadAllText(openFileDialog1.FileName);
+					rtbText.Text = new_text;
+				}
+				catch
+				{
+					MessageBox.Show("Error while saving file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+
+		private void tsmiSaveToFile_Click(object sender, EventArgs e)
+		{
+			string result_text = rtbResult.Text;
+			string[] result_strings = new[] { result_text };
+
+			Regex regEx = new Regex("[A-Za-z0-9_-]*[.]*[A-Za-z0-9]{3,4}");
+
+			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					string path = saveFileDialog1.FileName;
+
+					if (!regEx.Match(path).Success)
+					{
+						path += ".txt";
+					}
+
+					File.WriteAllLines(path, result_strings);
+				}
+				catch
+				{
+					MessageBox.Show("Error while saving file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
 		}
 	}
 }
