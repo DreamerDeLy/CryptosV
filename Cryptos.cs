@@ -18,13 +18,14 @@ namespace CryptosV
 			XOR,
 			LitoreaClassic,
 			Numbers,
-			Vigenere
+			Vigenere,
+			Atbash
 		}
 
 		public static string EncryptCaesar(string text, int shift = 3)
 		{
+			string result = "";
 			char[] ch_text = text.ToCharArray();
-			string result = "";	
 
 			for (int i = 0; i < text.Length; i++)
 			{
@@ -277,6 +278,58 @@ namespace CryptosV
 		public static string DecryptVigenere(string text, string key)
 		{
 			return EncryptVigenere(text, key, true);
+		}
+
+		public static string EncryptAtbash(string text)
+		{
+			string result = "";
+
+			char[] ch_text = text.ToCharArray();
+
+			for (int i = 0; i < text.Length; i++)
+			{
+				string s_alphabet = "";
+
+				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
+				{
+					s_alphabet = alphabet_en;
+				}
+				else
+				{
+					s_alphabet = alphabet_ua;
+				}
+
+				char[] alphabet = s_alphabet.ToArray();
+				int a_length = s_alphabet.Length;
+
+				//
+
+				char ch = ch_text[i];
+				char ch_result = ch;
+
+				bool current_case = char.IsUpper(ch);
+
+				ch = char.ToUpper(ch);
+
+				if (alphabet.Contains(ch))
+				{
+					int ch_pos = Array.IndexOf(alphabet, ch);
+
+					int n = a_length - (ch_pos + 1);
+					ch_result = alphabet[n];
+
+					if (!current_case) ch_result = char.ToLower(ch_result);
+				}
+
+				result += ch_result;
+			}
+
+			return result;
+		}
+
+		public static string DecryptAtbash(string text)
+		{
+			return EncryptAtbash(text);
 		}
 	}
 }

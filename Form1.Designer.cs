@@ -67,6 +67,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.rbAtbash = new System.Windows.Forms.RadioButton();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
@@ -77,6 +78,7 @@
 			// 
 			// rtbText
 			// 
+			this.rtbText.DetectUrls = false;
 			this.rtbText.Location = new System.Drawing.Point(12, 47);
 			this.rtbText.Name = "rtbText";
 			this.rtbText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -115,6 +117,7 @@
 			// 
 			// gbMethod
 			// 
+			this.gbMethod.Controls.Add(this.rbAtbash);
 			this.gbMethod.Controls.Add(this.rbVigenere);
 			this.gbMethod.Controls.Add(this.pnlColor);
 			this.gbMethod.Controls.Add(this.rbNumber);
@@ -131,7 +134,7 @@
 			// rbVigenere
 			// 
 			this.rbVigenere.AutoSize = true;
-			this.rbVigenere.Location = new System.Drawing.Point(7, 112);
+			this.rbVigenere.Location = new System.Drawing.Point(7, 135);
 			this.rbVigenere.Name = "rbVigenere";
 			this.rbVigenere.Size = new System.Drawing.Size(67, 17);
 			this.rbVigenere.TabIndex = 5;
@@ -173,7 +176,7 @@
 			// rbXor
 			// 
 			this.rbXor.AutoSize = true;
-			this.rbXor.Location = new System.Drawing.Point(7, 89);
+			this.rbXor.Location = new System.Drawing.Point(7, 112);
 			this.rbXor.Name = "rbXor";
 			this.rbXor.Size = new System.Drawing.Size(48, 17);
 			this.rbXor.TabIndex = 2;
@@ -379,14 +382,14 @@
 			// tsmiReadFromFile
 			// 
 			this.tsmiReadFromFile.Name = "tsmiReadFromFile";
-			this.tsmiReadFromFile.Size = new System.Drawing.Size(180, 22);
+			this.tsmiReadFromFile.Size = new System.Drawing.Size(171, 22);
 			this.tsmiReadFromFile.Text = "Read text from file";
 			this.tsmiReadFromFile.Click += new System.EventHandler(this.tsmiReadFromFile_Click);
 			// 
 			// tsmiSaveToFile
 			// 
 			this.tsmiSaveToFile.Name = "tsmiSaveToFile";
-			this.tsmiSaveToFile.Size = new System.Drawing.Size(180, 22);
+			this.tsmiSaveToFile.Size = new System.Drawing.Size(171, 22);
 			this.tsmiSaveToFile.Text = "Save ciper to file";
 			this.tsmiSaveToFile.Click += new System.EventHandler(this.tsmiSaveToFile_Click);
 			// 
@@ -403,19 +406,19 @@
 			// aboutCipersToolStripMenuItem
 			// 
 			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
-			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutCipersToolStripMenuItem.Text = "About cipers";
 			// 
 			// aboutProgramToolStripMenuItem
 			// 
 			this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutProgramToolStripMenuItem.Text = "About program";
 			// 
 			// aboutAuthorsToolStripMenuItem
 			// 
 			this.aboutAuthorsToolStripMenuItem.Name = "aboutAuthorsToolStripMenuItem";
-			this.aboutAuthorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutAuthorsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutAuthorsToolStripMenuItem.Text = "About authors";
 			// 
 			// label5
@@ -445,6 +448,17 @@
 			// 
 			this.saveFileDialog1.Filter = "Text|*.txt";
 			this.saveFileDialog1.Title = "Save ciper to file";
+			// 
+			// rbAtbash
+			// 
+			this.rbAtbash.AutoSize = true;
+			this.rbAtbash.Location = new System.Drawing.Point(7, 89);
+			this.rbAtbash.Name = "rbAtbash";
+			this.rbAtbash.Size = new System.Drawing.Size(58, 17);
+			this.rbAtbash.TabIndex = 6;
+			this.rbAtbash.Text = "Atbash";
+			this.rbAtbash.UseVisualStyleBackColor = true;
+			this.rbAtbash.CheckedChanged += new System.EventHandler(this.rbAtbash_CheckedChanged);
 			// 
 			// MainForm
 			// 
@@ -525,6 +539,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.RadioButton rbAtbash;
 	}
 }
 

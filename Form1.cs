@@ -50,6 +50,9 @@ namespace CryptosV
 					string v_key = tbVigenereKey.Text;
 					result = Cryptos.EncryptVigenere(text, v_key);
 					break;
+				case Cryptos.CiperType.Atbash:
+					result = Cryptos.EncryptAtbash(text);
+					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					break;
@@ -81,6 +84,9 @@ namespace CryptosV
 				case Cryptos.CiperType.Vigenere:
 					string v_key = tbVigenereKey.Text;
 					result = Cryptos.DecryptVigenere(text, v_key);
+					break;
+				case Cryptos.CiperType.Atbash:
+					//result = Cryptos.DecryptNumber(text);
 					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,6 +126,11 @@ namespace CryptosV
 		{
 			selected_method = Cryptos.CiperType.Vigenere;
 			setSafety(3);
+		}
+		private void rbAtbash_CheckedChanged(object sender, EventArgs e)
+		{
+			selected_method = Cryptos.CiperType.Atbash;
+			setSafety(2);
 		}
 
 
@@ -182,10 +193,12 @@ namespace CryptosV
 		private void tsmiReadFromFile_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
-			{
+			{ 
+				string path = openFileDialog1.FileName;
+				
 				try
 				{
-					string new_text = File.ReadAllText(openFileDialog1.FileName);
+					string new_text = File.ReadAllText(path);
 					rtbText.Text = new_text;
 				}
 				catch
@@ -221,5 +234,7 @@ namespace CryptosV
 				}
 			}
 		}
+
+		
 	}
 }
