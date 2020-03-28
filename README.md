@@ -4,25 +4,27 @@
 
 Program for text cryptography. Remake of my old Cryptos program which was writed on Delphi.
 
-**Now with some improvements:**
-- Support for two languages and switching alphabets on the go (not all cipers).
-- Saves all characters
-- Saves letter case
-- Custom alphabets
+# Features
+- Switching alphabets on the go
+- Supports custom alphabets
+- Saving all characters and letter case
 - Load/save text to file
 
-**Supported cipers:**
+## Supported cipers
 - Litorea (UKR)
 - Caesar (UKR/EN, switch on go)
 - XOR (any language)
 - A1Z26 (UKR/EN, switch on go)
 - Vigener (UKR/EN, switch on go)
+- Atbash (UKR/EN, switch on go)
 
-**ToDo's**
+Also all cipers support custom alphabets (except litorea).
+
+## ToDo's
 - New cipers
 - Save settings to file
 
-
+## About
 Copyright (c) 2020 Obukhov Dmytro (DreamerDeLy)
 
 License: MIT ([read full text](LICENSE))
