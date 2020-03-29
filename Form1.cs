@@ -230,7 +230,7 @@ namespace CryptosV
 				}
 				catch
 				{
-					MessageBox.Show("Error while saving file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Error while loading file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
