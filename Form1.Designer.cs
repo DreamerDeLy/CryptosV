@@ -137,7 +137,7 @@
 			this.rbAtbash.Location = new System.Drawing.Point(7, 89);
 			this.rbAtbash.Name = "rbAtbash";
 			this.rbAtbash.Size = new System.Drawing.Size(58, 17);
-			this.rbAtbash.TabIndex = 6;
+			this.rbAtbash.TabIndex = 4;
 			this.rbAtbash.Text = "Atbash";
 			this.rbAtbash.UseVisualStyleBackColor = true;
 			this.rbAtbash.CheckedChanged += new System.EventHandler(this.rbAtbash_CheckedChanged);
@@ -148,7 +148,7 @@
 			this.rbVigenere.Location = new System.Drawing.Point(7, 135);
 			this.rbVigenere.Name = "rbVigenere";
 			this.rbVigenere.Size = new System.Drawing.Size(67, 17);
-			this.rbVigenere.TabIndex = 5;
+			this.rbVigenere.TabIndex = 6;
 			this.rbVigenere.Text = "Vigenere";
 			this.rbVigenere.UseVisualStyleBackColor = true;
 			this.rbVigenere.CheckedChanged += new System.EventHandler(this.rbVigenere_CheckedChanged);
@@ -179,7 +179,7 @@
 			this.rbNumber.Location = new System.Drawing.Point(7, 19);
 			this.rbNumber.Name = "rbNumber";
 			this.rbNumber.Size = new System.Drawing.Size(57, 17);
-			this.rbNumber.TabIndex = 3;
+			this.rbNumber.TabIndex = 1;
 			this.rbNumber.Text = "A1Z26";
 			this.rbNumber.UseVisualStyleBackColor = true;
 			this.rbNumber.CheckedChanged += new System.EventHandler(this.rbNumber_CheckedChanged);
@@ -190,7 +190,7 @@
 			this.rbXor.Location = new System.Drawing.Point(7, 112);
 			this.rbXor.Name = "rbXor";
 			this.rbXor.Size = new System.Drawing.Size(48, 17);
-			this.rbXor.TabIndex = 2;
+			this.rbXor.TabIndex = 5;
 			this.rbXor.Text = "XOR";
 			this.rbXor.UseVisualStyleBackColor = true;
 			this.rbXor.CheckedChanged += new System.EventHandler(this.rbXor_CheckedChanged);
@@ -199,10 +199,10 @@
 			// 
 			this.rbCaesar.AutoSize = true;
 			this.rbCaesar.Checked = true;
-			this.rbCaesar.Location = new System.Drawing.Point(6, 65);
+			this.rbCaesar.Location = new System.Drawing.Point(7, 65);
 			this.rbCaesar.Name = "rbCaesar";
 			this.rbCaesar.Size = new System.Drawing.Size(58, 17);
-			this.rbCaesar.TabIndex = 1;
+			this.rbCaesar.TabIndex = 3;
 			this.rbCaesar.TabStop = true;
 			this.rbCaesar.Text = "Caesar";
 			this.rbCaesar.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@
 			this.rbLitorea.Location = new System.Drawing.Point(7, 42);
 			this.rbLitorea.Name = "rbLitorea";
 			this.rbLitorea.Size = new System.Drawing.Size(57, 17);
-			this.rbLitorea.TabIndex = 0;
+			this.rbLitorea.TabIndex = 2;
 			this.rbLitorea.Text = "Litorea";
 			this.rbLitorea.UseVisualStyleBackColor = true;
 			this.rbLitorea.CheckedChanged += new System.EventHandler(this.rbLitorea_CheckedChanged);
