@@ -21,7 +21,10 @@ namespace CryptosV
 		{
 			InitializeComponent();
 
-			setSafety(2);
+			SetSafety(2);
+
+			DisableSettings();
+
 			tbAlphabet1.Text = Cryptos.alphabet_en;
 			tbAlphabet2.Text = Cryptos.alphabet_ua;
 		}
@@ -101,42 +104,65 @@ namespace CryptosV
 		private void rbLitorea_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.LitoreaClassic;
-			setSafety(2);
+			SetSafety(2);
+
+			DisableSettings();
 		}
 
 		private void rbCaesar_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.Caesar;
-			setSafety(2);
+			SetSafety(2);
+
+			DisableSettings();
+			lblCaesarShift.Enabled = true;
+			nudCaesarKey.Enabled = true;
 		}
 
 		private void rbXor_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.XOR;
-			setSafety(3);
+			SetSafety(3);
+
+			DisableSettings();
+			lblXORkey.Enabled = true;
+			tbXORKey.Enabled = true;
 		}
 
 		private void rbNumber_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.Numbers;
-			setSafety(1);
+			SetSafety(1);
+
+			DisableSettings();
 		}
 
 		private void rbVigenere_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.Vigenere;
-			setSafety(3);
+			SetSafety(3);
+
+			DisableSettings();
+			lblVigenereKey.Enabled = true;
+			tbVigenereKey.Enabled = true;
 		}
 		private void rbAtbash_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CiperType.Atbash;
-			setSafety(2);
+			SetSafety(2);
+
+			DisableSettings();
 		}
 
-
-		private void nudCaesarKey_ValueChanged(object sender, EventArgs e)
+		private void DisableSettings()
 		{
-			key_caesar = Convert.ToInt32(nudCaesarKey.Value);
+			lblCaesarShift.Enabled = false;
+			lblXORkey.Enabled = false;
+			lblVigenereKey.Enabled = false;
+
+			nudCaesarKey.Enabled = false;
+			tbXORKey.Enabled = false;
+			tbVigenereKey.Enabled = false;
 		}
 
 
@@ -165,7 +191,7 @@ namespace CryptosV
 			}
 		}
 
-		void setSafety(int level = 1)
+		void SetSafety(int level = 1)
 		{
 			switch (level)
 			{

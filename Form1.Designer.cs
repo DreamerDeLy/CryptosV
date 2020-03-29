@@ -34,6 +34,7 @@
 			this.btnDecode = new System.Windows.Forms.Button();
 			this.rtbResult = new System.Windows.Forms.RichTextBox();
 			this.gbMethod = new System.Windows.Forms.GroupBox();
+			this.rbAtbash = new System.Windows.Forms.RadioButton();
 			this.rbVigenere = new System.Windows.Forms.RadioButton();
 			this.pnlColor = new System.Windows.Forms.Panel();
 			this.lblSafety = new System.Windows.Forms.Label();
@@ -43,10 +44,10 @@
 			this.rbLitorea = new System.Windows.Forms.RadioButton();
 			this.gbSettings = new System.Windows.Forms.GroupBox();
 			this.tbVigenereKey = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblVigenereKey = new System.Windows.Forms.Label();
 			this.tbXORKey = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblXORkey = new System.Windows.Forms.Label();
+			this.lblCaesarShift = new System.Windows.Forms.Label();
 			this.nudCaesarKey = new System.Windows.Forms.NumericUpDown();
 			this.btnSwap = new System.Windows.Forms.Button();
 			this.btnCrear = new System.Windows.Forms.Button();
@@ -62,12 +63,11 @@
 			this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutCipersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutAuthorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutAuthorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.rbAtbash = new System.Windows.Forms.RadioButton();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
@@ -130,6 +130,17 @@
 			this.gbMethod.TabIndex = 4;
 			this.gbMethod.TabStop = false;
 			this.gbMethod.Text = "Method";
+			// 
+			// rbAtbash
+			// 
+			this.rbAtbash.AutoSize = true;
+			this.rbAtbash.Location = new System.Drawing.Point(7, 89);
+			this.rbAtbash.Name = "rbAtbash";
+			this.rbAtbash.Size = new System.Drawing.Size(58, 17);
+			this.rbAtbash.TabIndex = 6;
+			this.rbAtbash.Text = "Atbash";
+			this.rbAtbash.UseVisualStyleBackColor = true;
+			this.rbAtbash.CheckedChanged += new System.EventHandler(this.rbAtbash_CheckedChanged);
 			// 
 			// rbVigenere
 			// 
@@ -211,10 +222,10 @@
 			// gbSettings
 			// 
 			this.gbSettings.Controls.Add(this.tbVigenereKey);
-			this.gbSettings.Controls.Add(this.label3);
+			this.gbSettings.Controls.Add(this.lblVigenereKey);
 			this.gbSettings.Controls.Add(this.tbXORKey);
-			this.gbSettings.Controls.Add(this.label2);
-			this.gbSettings.Controls.Add(this.label1);
+			this.gbSettings.Controls.Add(this.lblXORkey);
+			this.gbSettings.Controls.Add(this.lblCaesarShift);
 			this.gbSettings.Controls.Add(this.nudCaesarKey);
 			this.gbSettings.Location = new System.Drawing.Point(13, 385);
 			this.gbSettings.Name = "gbSettings";
@@ -231,14 +242,14 @@
 			this.tbVigenereKey.TabIndex = 6;
 			this.tbVigenereKey.Text = "key";
 			// 
-			// label3
+			// lblVigenereKey
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(7, 71);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(69, 13);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Vigenere key";
+			this.lblVigenereKey.AutoSize = true;
+			this.lblVigenereKey.Location = new System.Drawing.Point(7, 71);
+			this.lblVigenereKey.Name = "lblVigenereKey";
+			this.lblVigenereKey.Size = new System.Drawing.Size(69, 13);
+			this.lblVigenereKey.TabIndex = 5;
+			this.lblVigenereKey.Text = "Vigenere key";
 			// 
 			// tbXORKey
 			// 
@@ -249,23 +260,23 @@
 			this.tbXORKey.Text = "123";
 			this.tbXORKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbXORKey_KeyPress);
 			// 
-			// label2
+			// lblXORkey
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(7, 45);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 13);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "XOR key";
+			this.lblXORkey.AutoSize = true;
+			this.lblXORkey.Location = new System.Drawing.Point(7, 45);
+			this.lblXORkey.Name = "lblXORkey";
+			this.lblXORkey.Size = new System.Drawing.Size(50, 13);
+			this.lblXORkey.TabIndex = 3;
+			this.lblXORkey.Text = "XOR key";
 			// 
-			// label1
+			// lblCaesarShift
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(7, 19);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(62, 13);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Caesar shift";
+			this.lblCaesarShift.AutoSize = true;
+			this.lblCaesarShift.Location = new System.Drawing.Point(7, 19);
+			this.lblCaesarShift.Name = "lblCaesarShift";
+			this.lblCaesarShift.Size = new System.Drawing.Size(62, 13);
+			this.lblCaesarShift.TabIndex = 1;
+			this.lblCaesarShift.Text = "Caesar shift";
 			// 
 			// nudCaesarKey
 			// 
@@ -288,7 +299,6 @@
             0,
             0,
             0});
-			this.nudCaesarKey.ValueChanged += new System.EventHandler(this.nudCaesarKey_ValueChanged);
 			// 
 			// btnSwap
 			// 
@@ -325,7 +335,7 @@
 			// 
 			// btnAlphabetsSet
 			// 
-			this.btnAlphabetsSet.Location = new System.Drawing.Point(240, 39);
+			this.btnAlphabetsSet.Location = new System.Drawing.Point(240, 40);
 			this.btnAlphabetsSet.Name = "btnAlphabetsSet";
 			this.btnAlphabetsSet.Size = new System.Drawing.Size(49, 49);
 			this.btnAlphabetsSet.TabIndex = 3;
@@ -449,17 +459,6 @@
 			this.saveFileDialog1.Filter = "Text|*.txt";
 			this.saveFileDialog1.Title = "Save ciper to file";
 			// 
-			// rbAtbash
-			// 
-			this.rbAtbash.AutoSize = true;
-			this.rbAtbash.Location = new System.Drawing.Point(7, 89);
-			this.rbAtbash.Name = "rbAtbash";
-			this.rbAtbash.Size = new System.Drawing.Size(58, 17);
-			this.rbAtbash.TabIndex = 6;
-			this.rbAtbash.Text = "Atbash";
-			this.rbAtbash.UseVisualStyleBackColor = true;
-			this.rbAtbash.CheckedChanged += new System.EventHandler(this.rbAtbash_CheckedChanged);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,18 +509,18 @@
 		private System.Windows.Forms.RadioButton rbCaesar;
 		private System.Windows.Forms.RadioButton rbLitorea;
 		private System.Windows.Forms.GroupBox gbSettings;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblCaesarShift;
 		private System.Windows.Forms.NumericUpDown nudCaesarKey;
 		private System.Windows.Forms.Button btnSwap;
 		private System.Windows.Forms.TextBox tbXORKey;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblXORkey;
 		private System.Windows.Forms.Button btnCrear;
 		private System.Windows.Forms.RadioButton rbNumber;
 		private System.Windows.Forms.Panel pnlColor;
 		private System.Windows.Forms.Label lblSafety;
 		private System.Windows.Forms.RadioButton rbVigenere;
 		private System.Windows.Forms.TextBox tbVigenereKey;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblVigenereKey;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox tbAlphabet2;
