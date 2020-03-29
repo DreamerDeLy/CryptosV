@@ -14,7 +14,7 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Litorea (UKR)
 - Caesar (UKR/EN, switch on go)
 - XOR (any language)
-- A1Z26 (UKR/EN, switch on go)
+- A1Z26 (UKR/EN, switch on go only for encrypting)
 - Vigener (UKR/EN, switch on go)
 - Atbash (UKR/EN, switch on go)
 
@@ -23,6 +23,7 @@ Also all cipers support custom alphabets (except litorea).
 ## ToDo's
 - New cipers
 - Save settings to file
+- Bug fixes
 
 ## About
 Copyright (c) 2020 Obukhov Dmytro (DreamerDeLy)
