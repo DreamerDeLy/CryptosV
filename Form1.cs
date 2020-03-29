@@ -262,6 +262,14 @@ namespace CryptosV
 			}
 		}
 
-		
+		private void aboutAuthorsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/DreamerDeLy");
+		}
+
+		private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/DreamerDeLy/CryptosV");
+		}
 	}
 }

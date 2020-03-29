@@ -408,7 +408,7 @@
 			this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutCipersToolStripMenuItem,
             this.aboutProgramToolStripMenuItem,
-            this.aboutAuthorsToolStripMenuItem});
+            this.aboutAuthorToolStripMenuItem});
 			this.tsmiHelp.Name = "tsmiHelp";
 			this.tsmiHelp.Size = new System.Drawing.Size(44, 20);
 			this.tsmiHelp.Text = "Help";
@@ -416,20 +416,22 @@
 			// aboutCipersToolStripMenuItem
 			// 
 			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
-			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.aboutCipersToolStripMenuItem.Text = "About cipers";
 			// 
 			// aboutProgramToolStripMenuItem
 			// 
 			this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.aboutProgramToolStripMenuItem.Text = "About program";
+			this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
 			// 
-			// aboutAuthorsToolStripMenuItem
+			// aboutAuthorToolStripMenuItem
 			// 
-			this.aboutAuthorsToolStripMenuItem.Name = "aboutAuthorsToolStripMenuItem";
-			this.aboutAuthorsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-			this.aboutAuthorsToolStripMenuItem.Text = "About authors";
+			this.aboutAuthorToolStripMenuItem.Name = "aboutAuthorToolStripMenuItem";
+			this.aboutAuthorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutAuthorToolStripMenuItem.Text = "About author";
+			this.aboutAuthorToolStripMenuItem.Click += new System.EventHandler(this.aboutAuthorsToolStripMenuItem_Click);
 			// 
 			// label5
 			// 
@@ -533,7 +535,7 @@
 		private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
 		private System.Windows.Forms.ToolStripMenuItem aboutCipersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem aboutAuthorsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutAuthorToolStripMenuItem;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
