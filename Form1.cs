@@ -20,12 +20,10 @@ namespace CryptosV
 		{
 			InitializeComponent();
 
-			SetSafety(2);
-
-			DisableSettings();
-
 			tbAlphabet1.Text = Cryptos.alphabet_en;
 			tbAlphabet2.Text = Cryptos.alphabet_ua;
+
+			rbCaesar_CheckedChanged(this, EventArgs.Empty);
 		}
 
 		private void btnCode_Click(object sender, EventArgs e)
