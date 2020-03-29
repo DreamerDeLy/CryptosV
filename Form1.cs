@@ -14,7 +14,6 @@ namespace CryptosV
 {
 	public partial class MainForm : Form
 	{
-		int key_caesar = 3;
 		Cryptos.CiperType selected_method = Cryptos.CiperType.Caesar;
 
 		public MainForm()
@@ -40,7 +39,8 @@ namespace CryptosV
 					result = Cryptos.EncryptLitorea(text); 
 					break;
 				case Cryptos.CiperType.Caesar:
-					result = Cryptos.EncryptCaesar(text, key_caesar);
+					int caesar_key = Convert.ToInt32(nudCaesarKey.Value);
+					result = Cryptos.EncryptCaesar(text, caesar_key);
 					break;
 				case Cryptos.CiperType.XOR:
 					int xor_key = Convert.ToInt32(tbXORKey.Text);
@@ -75,7 +75,8 @@ namespace CryptosV
 					result = Cryptos.DecryptLitorea(text); 
 					break;
 				case Cryptos.CiperType.Caesar:
-					result = Cryptos.DecryptCaesar(text, key_caesar);
+					int caesar_key = Convert.ToInt32(nudCaesarKey.Value);
+					result = Cryptos.DecryptCaesar(text, caesar_key);
 					break;
 				case Cryptos.CiperType.XOR:
 					int xor_key = Convert.ToInt32(tbXORKey.Text);
