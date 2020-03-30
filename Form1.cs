@@ -14,7 +14,7 @@ namespace CryptosV
 {
 	public partial class MainForm : Form
 	{
-		Cryptos.CiperType selected_method = Cryptos.CiperType.Caesar;
+		Cryptos.CipherType selected_method = Cryptos.CipherType.Caesar;
 
 		public MainForm()
 		{
@@ -33,25 +33,25 @@ namespace CryptosV
 
 			switch (selected_method)
 			{
-				case Cryptos.CiperType.LitoreaClassic:
+				case Cryptos.CipherType.LitoreaClassic:
 					result = Cryptos.EncryptLitorea(text); 
 					break;
-				case Cryptos.CiperType.Caesar:
+				case Cryptos.CipherType.Caesar:
 					int caesar_key = Convert.ToInt32(nudCaesarKey.Value);
 					result = Cryptos.EncryptCaesar(text, caesar_key);
 					break;
-				case Cryptos.CiperType.XOR:
+				case Cryptos.CipherType.XOR:
 					int xor_key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.EncryptXOR(text, xor_key);
 					break;
-				case Cryptos.CiperType.Numbers:
+				case Cryptos.CipherType.Numbers:
 					result = Cryptos.EncryptNumber(text);
 					break;
-				case Cryptos.CiperType.Vigenere:
+				case Cryptos.CipherType.Vigenere:
 					string v_key = tbVigenereKey.Text;
 					result = Cryptos.EncryptVigenere(text, v_key);
 					break;
-				case Cryptos.CiperType.Atbash:
+				case Cryptos.CipherType.Atbash:
 					result = Cryptos.EncryptAtbash(text);
 					break;
 				default:
@@ -69,25 +69,25 @@ namespace CryptosV
 
 			switch (selected_method)
 			{
-				case Cryptos.CiperType.LitoreaClassic:
+				case Cryptos.CipherType.LitoreaClassic:
 					result = Cryptos.DecryptLitorea(text); 
 					break;
-				case Cryptos.CiperType.Caesar:
+				case Cryptos.CipherType.Caesar:
 					int caesar_key = Convert.ToInt32(nudCaesarKey.Value);
 					result = Cryptos.DecryptCaesar(text, caesar_key);
 					break;
-				case Cryptos.CiperType.XOR:
+				case Cryptos.CipherType.XOR:
 					int xor_key = Convert.ToInt32(tbXORKey.Text);
 					result = Cryptos.DecryptXOR(text, xor_key);
 					break;
-				case Cryptos.CiperType.Numbers:
+				case Cryptos.CipherType.Numbers:
 					result = Cryptos.DecryptNumber(text);
 					break;
-				case Cryptos.CiperType.Vigenere:
+				case Cryptos.CipherType.Vigenere:
 					string v_key = tbVigenereKey.Text;
 					result = Cryptos.DecryptVigenere(text, v_key);
 					break;
-				case Cryptos.CiperType.Atbash:
+				case Cryptos.CipherType.Atbash:
 					//result = Cryptos.DecryptNumber(text);
 					break;
 				default:
@@ -102,7 +102,7 @@ namespace CryptosV
 
 		private void rbLitorea_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.LitoreaClassic;
+			selected_method = Cryptos.CipherType.LitoreaClassic;
 			SetSafety(2);
 
 			DisableSettings();
@@ -110,7 +110,7 @@ namespace CryptosV
 
 		private void rbCaesar_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.Caesar;
+			selected_method = Cryptos.CipherType.Caesar;
 			SetSafety(2);
 
 			DisableSettings();
@@ -120,7 +120,7 @@ namespace CryptosV
 
 		private void rbXor_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.XOR;
+			selected_method = Cryptos.CipherType.XOR;
 			SetSafety(3);
 
 			DisableSettings();
@@ -130,7 +130,7 @@ namespace CryptosV
 
 		private void rbNumber_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.Numbers;
+			selected_method = Cryptos.CipherType.Numbers;
 			SetSafety(1);
 
 			DisableSettings();
@@ -138,7 +138,7 @@ namespace CryptosV
 
 		private void rbVigenere_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.Vigenere;
+			selected_method = Cryptos.CipherType.Vigenere;
 			SetSafety(3);
 
 			DisableSettings();
@@ -147,7 +147,7 @@ namespace CryptosV
 		}
 		private void rbAtbash_CheckedChanged(object sender, EventArgs e)
 		{
-			selected_method = Cryptos.CiperType.Atbash;
+			selected_method = Cryptos.CipherType.Atbash;
 			SetSafety(2);
 
 			DisableSettings();

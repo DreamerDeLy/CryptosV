@@ -12,7 +12,7 @@ namespace CryptosV
 		public static string alphabet_en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		public static string alphabet_ua = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
 
-		public enum CiperType
+		public enum CipherType
 		{
 			Caesar,
 			XOR,
@@ -25,36 +25,32 @@ namespace CryptosV
 		public static string EncryptCaesar(string text, int shift = 3)
 		{
 			string result = "";
-			char[] ch_text = text.ToCharArray();
 
 			for (int i = 0; i < text.Length; i++)
 			{
-				string s_alphabet = "";
-
-				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
-				{
-					s_alphabet = alphabet_en;
-				}
-				else
-				{
-					s_alphabet = alphabet_ua;
-				}
-
-				char[] alphabet = s_alphabet.ToArray();
-				int a_length = s_alphabet.Length;
-
-				//
-
-				char ch = ch_text[i];
+				char ch = text[i];
 				char ch_result = ch;
 
 				bool current_case = char.IsUpper(ch);
-
 				ch = char.ToUpper(ch);
+
+				string alphabet = "";
+
+				if (alphabet_en.Contains(ch))
+				{
+					alphabet = alphabet_en;
+				}
+				else
+				{
+					alphabet = alphabet_ua;
+				}
+				
+				int a_length = alphabet.Length;
+
 
 				if (alphabet.Contains(ch))
 				{
-					int ch_pos = Array.IndexOf(alphabet, ch);
+					int ch_pos = alphabet.IndexOf(ch);
 
 					int n = (a_length + ch_pos + shift) % a_length;
 					ch_result = alphabet[n];
@@ -91,12 +87,11 @@ namespace CryptosV
 			string alphabet1 = "БВГДЖЗКЛМН";
 			string alphabet2 = "ЩШЧЦХФТСРП";
 
-			char[] ch_text = text.ToCharArray();
 			string result = "";
 
 			for (int i = 0; i < text.Length; i++)
 			{
-				char ch = ch_text[i];
+				char ch = text[i];
 				char ch_result = ch;
 
 				bool current_case = char.IsUpper(ch);
@@ -128,36 +123,33 @@ namespace CryptosV
 
 		public static string EncryptNumber(string text)
 		{
-			char[] ch_text = text.ToCharArray();
 			string result = "";
 
 			for (int i = 0; i < text.Length; i++)
 			{
-				string s_alphabet = "";
+				string alphabet = "";
 
-				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
+				if (alphabet_en.Contains(char.ToUpper(text[i])))
 				{
-					s_alphabet = alphabet_en;
+					alphabet = alphabet_en;
 				}
 				else
 				{
-					s_alphabet = alphabet_ua;
+					alphabet = alphabet_ua;
 				}
 
-				char[] alphabet = s_alphabet.ToArray();
+				char ch = text[i];
+				string str_result = "" + ch;
 
-				char ch = ch_text[i];
 				char ch_next = ' ';
-				if (i < (text.Length - 1)) ch_next = ch_text[i + 1];
-
-				string str_result =  "" + ch;
+				if (i < (text.Length - 1)) ch_next = text[i + 1];
 
 				ch = char.ToUpper(ch);
 				ch_next = char.ToUpper(ch_next);
 
 				if (alphabet.Contains(ch))
 				{
-					int n = Array.IndexOf(alphabet, ch) + 1;
+					int n = alphabet.IndexOf(ch) + 1;
 					str_result = n.ToString();
 
 					if (alphabet.Contains(ch_next)) str_result += "-";
@@ -212,53 +204,51 @@ namespace CryptosV
 		{
 			string result = "";
 
-			char[] ch_text = text.ToCharArray();
 			string gamma = GetRepeatKey(key, text.Length);
 
 			int i_k = 0; // key pos
 
 			for (int i = 0; i < text.Length; i++)
 			{
-				string s_alphabet = "";
-
-				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
-				{
-					s_alphabet = alphabet_en;
-				}
-				else
-				{
-					s_alphabet = alphabet_ua;
-				}
-
-				char[] alphabet = s_alphabet.ToArray();
-				int a_length = s_alphabet.Length;
-
-				char ch = ch_text[i];
+				char ch = text[i];
 				char ch_result = ch;
 
 				bool current_case = char.IsUpper(ch);
 
 				ch = char.ToUpper(ch);
 
+				string alphabet = "";
 
-				if (alphabet_en.Contains(char.ToUpper(gamma[i_k])))
+				if (alphabet_en.Contains(ch))
 				{
-					s_alphabet = alphabet_en;
+					alphabet = alphabet_en;
 				}
 				else
 				{
-					s_alphabet = alphabet_ua;
+					alphabet = alphabet_ua;
 				}
 
-				char[] key_alphabet = s_alphabet.ToArray();
+				int a_length = alphabet.Length;
 
-				char k = gamma[i_k];
-				k = char.ToUpper(k);
+
+				char k = char.ToUpper(gamma[i_k]);
+
+				string key_alphabet = "";
+
+				if (alphabet_en.Contains(k))
+				{
+					key_alphabet = alphabet_en;
+				}
+				else
+				{
+					key_alphabet = alphabet_ua;
+				}
+
 
 				if (alphabet.Contains(ch))
 				{
-					int ch_pos = Array.IndexOf(alphabet, ch);
-					int key_pos = Array.IndexOf(key_alphabet, k);
+					int ch_pos = alphabet.IndexOf(ch);
+					int key_pos = key_alphabet.IndexOf(k);
 
 					if (key_minus) key_pos = 0 - key_pos; // For decode
 
@@ -284,36 +274,33 @@ namespace CryptosV
 		{
 			string result = "";
 
-			char[] ch_text = text.ToCharArray();
-
 			for (int i = 0; i < text.Length; i++)
 			{
-				string s_alphabet = "";
-
-				if (alphabet_en.Contains(char.ToUpper(ch_text[i])))
-				{
-					s_alphabet = alphabet_en;
-				}
-				else
-				{
-					s_alphabet = alphabet_ua;
-				}
-
-				char[] alphabet = s_alphabet.ToArray();
-				int a_length = s_alphabet.Length;
-
-				//
-
-				char ch = ch_text[i];
+				char ch = text[i];
 				char ch_result = ch;
 
 				bool current_case = char.IsUpper(ch);
 
 				ch = char.ToUpper(ch);
 
+
+				string alphabet = "";
+
+				if (alphabet_en.Contains(ch))
+				{
+					alphabet = alphabet_en;
+				}
+				else
+				{
+					alphabet = alphabet_ua;
+				}
+
+				int a_length = alphabet.Length;
+				
+
 				if (alphabet.Contains(ch))
 				{
-					int ch_pos = Array.IndexOf(alphabet, ch);
+					int ch_pos = alphabet.IndexOf(ch);
 
 					int n = a_length - (ch_pos + 1);
 					ch_result = alphabet[n];

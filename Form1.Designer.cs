@@ -417,7 +417,7 @@
 			// 
 			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
 			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.aboutCipersToolStripMenuItem.Text = "About cipers";
+			this.aboutCipersToolStripMenuItem.Text = "About ciphers";
 			// 
 			// aboutProgramToolStripMenuItem
 			// 
@@ -447,9 +447,9 @@
 			this.label6.AutoSize = true;
 			this.label6.Location = new System.Drawing.Point(312, 28);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(31, 13);
+			this.label6.Size = new System.Drawing.Size(37, 13);
 			this.label6.TabIndex = 11;
-			this.label6.Text = "Ciper";
+			this.label6.Text = "Cipher";
 			// 
 			// openFileDialog1
 			// 
