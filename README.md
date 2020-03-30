@@ -10,7 +10,7 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Saving all characters and letter case
 - Load/save text to file
 
-## Supported cipers
+## Supported ciphers
 - Litorea (UKR)
 - Caesar (UKR/EN, switch on go)
 - XOR (any language)
@@ -18,10 +18,10 @@ Program for text cryptography. Remake of my old Cryptos program which was writed
 - Vigener (UKR/EN, switch on go)
 - Atbash (UKR/EN, switch on go)
 
-Also all cipers support custom alphabets (except litorea).
+Also all ciphers support custom alphabets (except litorea).
 
 ## ToDo's
-- New cipers
+- New ciphers
 - Save settings to file
 - Bug fixes
 
