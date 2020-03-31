@@ -418,6 +418,7 @@
 			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
 			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.aboutCipersToolStripMenuItem.Text = "About ciphers";
+			this.aboutCipersToolStripMenuItem.Click += new System.EventHandler(this.aboutCipersToolStripMenuItem_Click);
 			// 
 			// aboutProgramToolStripMenuItem
 			// 

@@ -269,5 +269,10 @@ namespace CryptosV
 		{
 			System.Diagnostics.Process.Start("https://github.com/DreamerDeLy/CryptosV");
 		}
+
+		private void aboutCipersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/DreamerDeLy/CryptosV#supported-ciphers");
+		}
 	}
 }

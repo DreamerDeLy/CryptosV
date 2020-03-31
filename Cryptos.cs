@@ -318,5 +318,12 @@ namespace CryptosV
 		{
 			return EncryptAtbash(text);
 		}
+
+		public static string EncryptTarabar(string text)
+		{
+			string result = "";
+
+			return result;
+		}
 	}
 }
