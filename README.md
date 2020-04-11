@@ -4,6 +4,8 @@
 
 Program for text cryptography. Remake of my old Cryptos program which was writed on Delphi.
 
+![screenshot](screenshot.png)
+
 # Features
 - Switching alphabets on the go
 - Supports custom alphabets
