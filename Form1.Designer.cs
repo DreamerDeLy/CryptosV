@@ -68,6 +68,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.rbQwerty = new System.Windows.Forms.RadioButton();
 			this.gbMethod.SuspendLayout();
 			this.pnlColor.SuspendLayout();
 			this.gbSettings.SuspendLayout();
@@ -117,6 +118,7 @@
 			// 
 			// gbMethod
 			// 
+			this.gbMethod.Controls.Add(this.rbQwerty);
 			this.gbMethod.Controls.Add(this.rbAtbash);
 			this.gbMethod.Controls.Add(this.rbVigenere);
 			this.gbMethod.Controls.Add(this.pnlColor);
@@ -416,21 +418,21 @@
 			// aboutCipersToolStripMenuItem
 			// 
 			this.aboutCipersToolStripMenuItem.Name = "aboutCipersToolStripMenuItem";
-			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutCipersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutCipersToolStripMenuItem.Text = "About ciphers";
 			this.aboutCipersToolStripMenuItem.Click += new System.EventHandler(this.aboutCipersToolStripMenuItem_Click);
 			// 
 			// aboutProgramToolStripMenuItem
 			// 
 			this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutProgramToolStripMenuItem.Text = "About program";
 			this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
 			// 
 			// aboutAuthorToolStripMenuItem
 			// 
 			this.aboutAuthorToolStripMenuItem.Name = "aboutAuthorToolStripMenuItem";
-			this.aboutAuthorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.aboutAuthorToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.aboutAuthorToolStripMenuItem.Text = "About author";
 			this.aboutAuthorToolStripMenuItem.Click += new System.EventHandler(this.aboutAuthorsToolStripMenuItem_Click);
 			// 
@@ -461,6 +463,17 @@
 			// 
 			this.saveFileDialog1.Filter = "Text|*.txt";
 			this.saveFileDialog1.Title = "Save ciper to file";
+			// 
+			// rbQwerty
+			// 
+			this.rbQwerty.AutoSize = true;
+			this.rbQwerty.Location = new System.Drawing.Point(7, 158);
+			this.rbQwerty.Name = "rbQwerty";
+			this.rbQwerty.Size = new System.Drawing.Size(73, 17);
+			this.rbQwerty.TabIndex = 7;
+			this.rbQwerty.Text = "QWERTY";
+			this.rbQwerty.UseVisualStyleBackColor = true;
+			this.rbQwerty.CheckedChanged += new System.EventHandler(this.rbQwerty_CheckedChanged);
 			// 
 			// MainForm
 			// 
@@ -542,6 +555,7 @@
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.RadioButton rbAtbash;
+		private System.Windows.Forms.RadioButton rbQwerty;
 	}
 }
 

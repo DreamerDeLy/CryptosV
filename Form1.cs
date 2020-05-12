@@ -54,6 +54,9 @@ namespace CryptosV
 				case Cryptos.CipherType.Atbash:
 					result = Cryptos.EncryptAtbash(text);
 					break;
+				case Cryptos.CipherType.Qwerty:
+					result = Cryptos.EncryptQwerty(text);
+					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					break;
@@ -90,6 +93,8 @@ namespace CryptosV
 				case Cryptos.CipherType.Atbash:
 					result = Cryptos.DecryptAtbash(text);
 					break;
+				case Cryptos.CipherType.Qwerty:
+					result = Cryptos.DecryptQwerty(text);
 					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -146,6 +151,7 @@ namespace CryptosV
 			lblVigenereKey.Enabled = true;
 			tbVigenereKey.Enabled = true;
 		}
+
 		private void rbAtbash_CheckedChanged(object sender, EventArgs e)
 		{
 			selected_method = Cryptos.CipherType.Atbash;
@@ -153,6 +159,16 @@ namespace CryptosV
 
 			DisableSettings();
 		}
+
+		private void rbQwerty_CheckedChanged(object sender, EventArgs e)
+		{
+			selected_method = Cryptos.CipherType.Qwerty;
+			SetSafety(1);
+
+			DisableSettings();
+		}
+
+
 
 		private void DisableSettings()
 		{
