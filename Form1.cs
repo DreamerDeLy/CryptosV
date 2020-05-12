@@ -88,7 +88,8 @@ namespace CryptosV
 					result = Cryptos.DecryptVigenere(text, v_key);
 					break;
 				case Cryptos.CipherType.Atbash:
-					//result = Cryptos.DecryptNumber(text);
+					result = Cryptos.DecryptAtbash(text);
+					break;
 					break;
 				default:
 					MessageBox.Show("This option not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
