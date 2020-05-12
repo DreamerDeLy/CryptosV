@@ -19,7 +19,8 @@ namespace CryptosV
 			LitoreaClassic,
 			Numbers,
 			Vigenere,
-			Atbash
+			Atbash,
+			Qwerty
 		}
 
 		public static string EncryptCaesar(string text, int shift = 3)
@@ -317,6 +318,39 @@ namespace CryptosV
 		public static string DecryptAtbash(string text)
 		{
 			return EncryptAtbash(text);
+		}
+
+		public static string EncryptQwerty(string text)
+		{
+			string qwerty_en = "qwertyuiop[]asdfghjkl;'zxcvbnm,.";
+			string qwerty_ua = "йцукенгшщзхїфівапролджєячсмитьбю";
+
+			string result = "";
+
+			foreach (char c in text)
+			{
+				if (qwerty_en.Contains(c))
+				{
+					int i = qwerty_en.IndexOf(c);
+					result += qwerty_ua[i];
+				}
+				else if (qwerty_ua.Contains(c))
+				{
+					int i = qwerty_ua.IndexOf(c);
+					result += qwerty_en[i];
+				}
+				else
+				{
+					result += c;
+				}
+			}
+
+			return result;
+		}
+
+		public static string DecryptQwerty(string text)
+		{
+			return EncryptQwerty(text);
 		}
 
 		public static string EncryptTarabar(string text)
